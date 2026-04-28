@@ -1,0 +1,127 @@
+import {
+    SiDocker,
+    SiExpress,
+    SiFigma,
+    SiFramer,
+    SiGit,
+    SiMongodb,
+    SiNextdotjs,
+    SiNodedotjs,
+    SiPostgresql,
+    SiReact,
+    SiRedis,
+    SiTailwindcss,
+    SiTypescript,
+} from 'react-icons/si';
+import { FaAws } from 'react-icons/fa';
+import { VscVscode } from 'react-icons/vsc';
+
+import type { StackItem } from '../types';
+
+export const stack: StackItem[] = [
+    {
+        name: 'React',
+        Icon: SiReact,
+        category: 'frontend',
+        colorClass: 'text-[#61DAFB]',
+        bgClass: 'bg-[#61DAFB]/10 dark:bg-[#61DAFB]/15',
+    },
+    {
+        name: 'TypeScript',
+        Icon: SiTypescript,
+        category: 'frontend',
+        colorClass: 'text-[#3178C6]',
+        bgClass: 'bg-[#3178C6]/10 dark:bg-[#3178C6]/15',
+    },
+    {
+        name: 'Next.js',
+        Icon: SiNextdotjs,
+        category: 'frontend',
+        colorClass: 'text-neutral-900 dark:text-neutral-100',
+        bgClass: 'bg-neutral-200/70 dark:bg-neutral-800/60',
+    },
+    {
+        name: 'Tailwind CSS',
+        Icon: SiTailwindcss,
+        category: 'frontend',
+        colorClass: 'text-[#06B6D4]',
+        bgClass: 'bg-[#06B6D4]/10 dark:bg-[#06B6D4]/15',
+    },
+    {
+        name: 'Framer Motion',
+        Icon: SiFramer,
+        category: 'frontend',
+        colorClass: 'text-[#4C6FFF] dark:text-[#7E95FF]',
+        bgClass: 'bg-[#4C6FFF]/10 dark:bg-[#4C6FFF]/15',
+    },
+    {
+        name: 'Node.js',
+        Icon: SiNodedotjs,
+        category: 'backend',
+        colorClass: 'text-[#339933]',
+        bgClass: 'bg-[#339933]/10 dark:bg-[#339933]/15',
+    },
+    {
+        name: 'Express',
+        Icon: SiExpress,
+        category: 'backend',
+        colorClass: 'text-neutral-900 dark:text-neutral-100',
+        bgClass: 'bg-neutral-200/70 dark:bg-neutral-800/60',
+    },
+    {
+        name: 'PostgreSQL',
+        Icon: SiPostgresql,
+        category: 'backend',
+        colorClass: 'text-[#336791]',
+        bgClass: 'bg-[#336791]/10 dark:bg-[#336791]/15',
+    },
+    {
+        name: 'MongoDB',
+        Icon: SiMongodb,
+        category: 'backend',
+        colorClass: 'text-[#47A248]',
+        bgClass: 'bg-[#47A248]/10 dark:bg-[#47A248]/15',
+    },
+    {
+        name: 'Docker',
+        Icon: SiDocker,
+        category: 'devops',
+        colorClass: 'text-[#2496ED]',
+        bgClass: 'bg-[#2496ED]/10 dark:bg-[#2496ED]/15',
+    },
+    {
+        name: 'AWS',
+        Icon: FaAws,
+        category: 'devops',
+        colorClass: 'text-[#FF9900]',
+        bgClass: 'bg-[#FF9900]/10 dark:bg-[#FF9900]/15',
+    },
+    {
+        name: 'Git',
+        Icon: SiGit,
+        category: 'tools',
+        colorClass: 'text-[#F05032]',
+        bgClass: 'bg-[#F05032]/10 dark:bg-[#F05032]/15',
+    },
+    {
+        name: 'Figma',
+        Icon: SiFigma,
+        category: 'tools',
+        colorClass: 'text-[#F24E1E]',
+        bgClass: 'bg-[#F24E1E]/10 dark:bg-[#F24E1E]/15',
+    },
+    {
+        name: 'VS Code',
+        Icon: VscVscode,
+        category: 'tools',
+        colorClass: 'text-[#007ACC]',
+        bgClass: 'bg-[#007ACC]/10 dark:bg-[#007ACC]/15',
+    },
+    {
+        name: 'Redis',
+        Icon: SiRedis,
+        category: 'backend',
+        colorClass: 'text-[#DC382D]',
+        bgClass: 'bg-[#DC382D]/10 dark:bg-[#DC382D]/15',
+    },
+];

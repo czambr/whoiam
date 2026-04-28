@@ -1,0 +1,125 @@
+@import 'tailwindcss';
+
+@theme {
+  --font-display: 'Syne', sans-serif;
+  --font-body: 'DM Sans', sans-serif;
+
+  --color-bg-dark: #050510;
+  --color-surface-dark: #0a0a1a;
+  --color-surface-elevated-dark: #141428;
+  --color-border-dark: rgba(255, 255, 255, 0.08);
+  --color-text-dark: #f0f0f5;
+  --color-text-muted-dark: #8888a0;
+
+  --color-bg-light: #fafafa;
+  --color-surface-light: #ffffff;
+  --color-surface-elevated-light: #f5f5f5;
+  --color-border-light: rgba(0, 0, 0, 0.08);
+  --color-text-light: #171717;
+  --color-text-muted-light: #525252;
+}
+
+@variant dark (&:where(.dark, .dark *));
+
+* {
+  box-sizing: border-box;
+  /* margin: 0;
+    padding: 0; */
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+.dark body {
+  background-color: var(--color-bg-dark);
+  color: var(--color-text-dark);
+}
+
+:not(.dark) body {
+  background-color: var(--color-bg-light);
+  color: var(--color-text-light);
+}
+
+::selection {
+  background-color: #0ea5e9;
+  color: white;
+}
+
+@keyframes grain {
+
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+
+  10% {
+    transform: translate(-5%, -10%);
+  }
+
+  20% {
+    transform: translate(-15%, 5%);
+  }
+
+  30% {
+    transform: translate(7%, -25%);
+  }
+
+  40% {
+    transform: translate(-5%, 25%);
+  }
+
+  50% {
+    transform: translate(-15%, 10%);
+  }
+
+  60% {
+    transform: translate(15%, 0%);
+  }
+
+  70% {
+    transform: translate(0%, 15%);
+  }
+
+  80% {
+    transform: translate(3%, 35%);
+  }
+
+  90% {
+    transform: translate(-10%, 10%);
+  }
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.grain-overlay {
+  position: fixed;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  pointer-events: none;
+  opacity: 0.025;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  animation: grain 8s ease infinite;
+  z-index: 9999;
+}
+
+.float-animation {
+  animation: float 4s ease-in-out infinite;
+}

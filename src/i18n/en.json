@@ -1,0 +1,57 @@
+{
+    "nav": {
+        "about": "About",
+        "stack": "Stack",
+        "projects": "Projects",
+        "experience": "Experience",
+        "contact": "Contact",
+        "downloadCV": "Download CV"
+    },
+    "hero": {
+        "greeting": "Hi, I'm",
+        "role": "Full Stack Developer",
+        "roleAlt": "Digital Builder",
+        "roleAlt2": "UI/UX Designer",
+        "tagline": "I build digital products with attention to detail.",
+        "cta_projects": "View projects",
+        "cta_contact": "Contact me"
+    },
+    "about": {
+        "title": "About me",
+        "body": "I'm passionate about creating memorable digital experiences. With over 5 years of experience in web development, I combine technical skills with a refined aesthetic sense to build products that not only work, but captivate.",
+        "location": "Mexico City, Mexico",
+        "availability": "Available for projects"
+    },
+    "stack": {
+        "title": "My stack",
+        "categories": {
+            "frontend": "Frontend",
+            "backend": "Backend",
+            "devops": "DevOps",
+            "tools": "Tools"
+        }
+    },
+    "projects": {
+        "title": "Projects",
+        "all": "All",
+        "featured": "Featured",
+        "viewCode": "Code",
+        "viewLive": "Live",
+        "viewAll": "View all"
+    },
+    "experience": {
+        "title": "Experience",
+        "present": "Present",
+        "viewMore": "View more"
+    },
+    "contact": {
+        "title": "Contact",
+        "subtitle": "Have a project in mind? Let's talk.",
+        "email": "Send email",
+        "copy": "Copy email",
+        "copied": "Copied!"
+    },
+    "footer": {
+        "madeWith": "Made with"
+    }
+}

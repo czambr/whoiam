@@ -1,0 +1,57 @@
+{
+    "nav": {
+        "about": "Sobre mí",
+        "stack": "Stack",
+        "projects": "Proyectos",
+        "experience": "Experiencia",
+        "contact": "Contacto",
+        "downloadCV": "Descargar CV"
+    },
+    "hero": {
+        "greeting": "Hola, soy",
+        "role": "Desarrollador Full Stack",
+        "roleAlt": "Creador Digital",
+        "roleAlt2": "Diseñador UI/UX",
+        "tagline": "Construyo productos digitales con atención al detalle.",
+        "cta_projects": "Ver proyectos",
+        "cta_contact": "Contáctame"
+    },
+    "about": {
+        "title": "Sobre mí",
+        "body": "Me apasiona crear experiencias digitales memorables. Con más de 5 años de experiencia en desarrollo web, combino habilidades técnicas con un sentido estético refinado para construir productos que no solo funcionan, sino que cautivan.",
+        "location": "Ciudad de México, México",
+        "availability": "Disponible para proyectos"
+    },
+    "stack": {
+        "title": "Mi stack",
+        "categories": {
+            "frontend": "Frontend",
+            "backend": "Backend",
+            "devops": "DevOps",
+            "tools": "Herramientas"
+        }
+    },
+    "projects": {
+        "title": "Proyectos",
+        "all": "Todos",
+        "featured": "Destacados",
+        "viewCode": "Código",
+        "viewLive": "Demo",
+        "viewAll": "Ver todos"
+    },
+    "experience": {
+        "title": "Experiencia",
+        "present": "Actual",
+        "viewMore": "Ver más"
+    },
+    "contact": {
+        "title": "Contacto",
+        "subtitle": "¿Tienes un proyecto en mente? Hablemos.",
+        "email": "Enviar email",
+        "copy": "Copiar email",
+        "copied": "¡Copiado!"
+    },
+    "footer": {
+        "madeWith": "Hecho con"
+    }
+}
