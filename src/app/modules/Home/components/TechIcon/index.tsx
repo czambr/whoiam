@@ -29,9 +29,6 @@ export const TechIcon = ({ item }: { item: typeof stack[0] }) => {
                     <span className="block font-semibold text-neutral-900 dark:text-neutral-200">
                         {item.name}
                     </span>
-                    {item.category === 'frontend' && (
-                        <span className="text-xs text-neutral-500 dark:text-neutral-500 mt-1 block">UI Library</span>
-                    )}
                 </div>
             </div>
 
