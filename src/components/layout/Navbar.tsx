@@ -3,7 +3,9 @@ import { useTranslation } from 'react-i18next';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Sun, Moon, Menu, X } from 'lucide-react';
-import { useAppStore } from '../../store/useAppStore';
+
+import { useAppStore } from '@/store/useAppStore';
+import { cn } from '@/lib/utils';
 
 const navLinks = [
     { key: 'about', href: '#about' },
@@ -74,11 +76,11 @@ export default function Navbar() {
         <motion.nav
             initial={{ y: -100 }}
             animate={{ y: 0 }}
-            className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+            className={cn('fixed top-0 left-0 right-0 z-50 transition-all duration-300',
                 scrolled 
                     ? 'bg-white/80 dark:bg-neutral-950/80 backdrop-blur-xl border-b border-neutral-200 dark:border-neutral-800' 
                     : 'bg-transparent'
-            }`}
+            )}
         >
             <div className="max-w-6xl mx-auto px-6">
                 <div className="flex items-center justify-between h-16 md:h-20">
@@ -91,14 +93,15 @@ export default function Navbar() {
                             <button
                                 key={link.key}
                                 onClick={() => handleNavClick(link.href)}
-                                className={`text-sm font-medium transition-all duration-200 relative ${
-                                    activeSection === link.key.slice(1)
+                                className={cn(
+                                    'cursor-pointer text-sm font-medium transition-all duration-200 relative',
+                                    activeSection === link.key
                                         ? 'text-sky-600 dark:text-sky-400'
-                                        : 'text-neutral-600 dark:text-neutral-400 hover:text-sky-600 dark:hover:text-sky-400'
-                                }`}
+                                        : 'text-neutral-600 dark:text-neutral-400 hover:text-sky-600 dark:hover:text-sky-400',
+                                )}
                             >
                                 {t(`nav.${link.key}`)}
-                                {activeSection === link.key.slice(1) && (
+                                {activeSection === link.key && (
                                     <motion.span
                                         layoutId="activeIndicator"
                                         className="absolute -bottom-1 left-0 right-0 h-0.5 bg-sky-600 dark:bg-sky-400 rounded-full"
@@ -150,11 +153,12 @@ export default function Navbar() {
                                 <button
                                     key={link.key}
                                     onClick={() => handleNavClick(link.href)}
-                                    className={`block w-full text-left py-2 px-3 rounded-lg transition-colors ${
-                                        activeSection === link.key.slice(1)
+                                    className={cn(
+                                        'block w-full text-left py-2 px-3 rounded-lg transition-colors',
+                                        activeSection === link.key
                                             ? 'text-sky-600 dark:text-sky-400 bg-sky-50 dark:bg-sky-950/30'
-                                            : 'text-neutral-900 dark:text-neutral-50 hover:bg-neutral-100 dark:hover:bg-neutral-800'
-                                    }`}
+                                            : 'text-neutral-900 dark:text-neutral-50 hover:bg-neutral-100 dark:hover:bg-neutral-800',
+                                    )}
                                 >
                                     {t(`nav.${link.key}`)}
                                 </button>
