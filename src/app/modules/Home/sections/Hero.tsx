@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { ArrowRight, CircleDot, Sparkles } from 'lucide-react';
 
+import { userData } from '@/app/shared/data/userdata';
 import { HeroBackground } from '../components/HeroBackground';
 import { RoleRotator } from '../components/RoleRotator';
 import { GlitchText } from '../components/GlitchText';
@@ -42,7 +43,7 @@ export default function Hero() {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, delay: 0.1 }}
-                        className='text-6xl md:text-8xl lg:text-8xl xl:text-9xl font-bold mb-6 tracking-tight'
+                        className='text-6xl md:text-6xl lg:text-7xl xl:text-8xl font-bold mb-6 tracking-tight'
                     >
                         <div className='overflow-hidden'>
                             <motion.div
@@ -65,7 +66,7 @@ export default function Hero() {
                                 transition={{ duration: 0.8, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
                             >
                                 <span className='block text-neutral-900 dark:text-white drop-shadow-sm'>
-                                    Developer!!
+                                    {userData.name}
                                 </span>
                             </motion.div>
                         </div>
@@ -120,7 +121,7 @@ export default function Hero() {
                         transition={{ delay: 1 }}
                         className='mt-16 flex flex-wrap gap-4 justify-center lg:justify-start'
                     >
-                        {['React', 'TypeScript', 'Node.js', 'PostgreSQL'].map((tech, i) => (
+                        {userData.principalStack.map((tech, i) => (
                             <motion.span
                                 key={tech}
                                 initial={{ opacity: 0, y: 20 }}

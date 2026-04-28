@@ -10,16 +10,16 @@
     "hero": {
         "greeting": "Hola, soy",
         "role": "Desarrollador Full Stack",
-        "roleAlt": "Creador Digital",
-        "roleAlt2": "Diseñador UI/UX",
-        "tagline": "Construyo productos digitales con atención al detalle.",
+        "roleAlt": "Desarrollador frontend",
+        "roleAlt2": "Desarrollador backend",
+        "tagline": "Construyo productos para una experiencia digital memorable",
         "cta_projects": "Ver proyectos",
         "cta_contact": "Contáctame"
     },
     "about": {
         "title": "Sobre mí",
-        "body": "Me apasiona crear experiencias digitales memorables. Con más de 5 años de experiencia en desarrollo web, combino habilidades técnicas con un sentido estético refinado para construir productos que no solo funcionan, sino que cautivan.",
-        "location": "Ciudad de México, México",
+        "body": "Me apasiona crear experiencias digitales memorables. Con más de {{ years }} años de experiencia en desarrollo web, combino habilidades técnicas con un sentido estético refinado para construir productos que no solo funcionan, sino que cautivan.",
+        "location": "Locación reservada",
         "availability": "Disponible para proyectos"
     },
     "stack": {

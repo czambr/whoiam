@@ -10,16 +10,16 @@
     "hero": {
         "greeting": "Hi, I'm",
         "role": "Full Stack Developer",
-        "roleAlt": "Digital Builder",
-        "roleAlt2": "UI/UX Designer",
-        "tagline": "I build digital products with attention to detail.",
+        "roleAlt": "Frontend Developer",
+        "roleAlt2": "Backend Developer",
+        "tagline": "I build products for a memorable digital experience",
         "cta_projects": "View projects",
         "cta_contact": "Contact me"
     },
     "about": {
         "title": "About me",
-        "body": "I'm passionate about creating memorable digital experiences. With over 5 years of experience in web development, I combine technical skills with a refined aesthetic sense to build products that not only work, but captivate.",
-        "location": "Mexico City, Mexico",
+        "body": "I'm passionate about creating memorable digital experiences. With over {{ years }} of experience in web development, I combine technical skills with a refined aesthetic sense to build products that not only work, but captivate.",
+        "location": "Location reserved",
         "availability": "Available for projects"
     },
     "stack": {

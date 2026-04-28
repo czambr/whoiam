@@ -4,14 +4,23 @@ import { MapPin, Sparkles, Code, Users } from 'lucide-react';
 
 import { fadeInUp, staggerContainer } from '@/lib/animations';
 import { StatCard } from '../components/StatsCard';
+import { useMemo } from 'react';
 
 
 
 export default function About() {
     const { t } = useTranslation();
 
-    const stats = [
-        { value: 5, suffix: '+', label: 'Años', icon: Sparkles },
+
+
+    const yearsOfExperience = useMemo(() => {
+        const startYear = 2022;
+        const currentYear = new Date().getFullYear();
+        return currentYear - startYear;
+    }, []);
+
+        const stats = [
+        { value: yearsOfExperience, suffix: '+', label: 'Años', icon: Sparkles },
         { value: 20, suffix: '+', label: 'Proyectos', icon: Code },
         { value: 10, suffix: '+', label: 'Clientes', icon: Users },
     ];
@@ -37,7 +46,7 @@ export default function About() {
                     <div className="grid md:grid-cols-2 gap-16 items-center">
                         <motion.div variants={fadeInUp}>
                             <p className="text-lg leading-relaxed text-neutral-600 dark:text-neutral-400 mb-8">
-                                {t('about.body')}
+                                {t('about.body', { years: yearsOfExperience })}
                             </p>
 
                             <motion.div className="flex items-center gap-3 text-neutral-500 dark:text-neutral-500" whileHover={{ x: 4 }}>
