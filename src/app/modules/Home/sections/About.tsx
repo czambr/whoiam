@@ -18,11 +18,9 @@ export default function About() {
 
     return (
         <section id="about" className="py-32 relative bg-white dark:bg-neutral-950 overflow-hidden">
-            <div className="absolute inset-0 hidden dark:block">
-                <div className="absolute top-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-white/10 to-transparent" />
-                <div className="absolute bottom-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-white/10 to-transparent" />
-                <div className="absolute top-1/2 left-1/4 w-px h-1/2 bg-linear-to-b from-transparent via-white/5 to-transparent" />
-                <div className="absolute top-1/2 right-1/4 w-px h-1/2 bg-linear-to-b from-transparent via-white/5 to-transparent" />
+            <div className="absolute inset-0">
+                <div className="absolute top-1/5 left-50 w-86 h-96 bg-sky-600/10 rounded-full blur-3xl" />
+                <div className="absolute bottom-1/3 right-0 w-96 h-96 bg-violet-600/10 rounded-full blur-3xl" />
             </div>
 
             <div className="relative z-10 max-w-6xl mx-auto px-6">

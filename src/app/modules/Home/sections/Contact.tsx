@@ -17,10 +17,10 @@ export default function Contact() {
     };
 
     return (
-        <section id="contact" className="py-32 relative bg-neutral-50 dark:bg-neutral-950 overflow-hidden">
-            <div className="absolute inset-0 hidden dark:block">
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-150 h-150 bg-sky-600/10 rounded-full blur-3xl" />
-                <div className="absolute bottom-0 left-1/4 w-100 h-100 bg-violet-600/10 rounded-full blur-3xl" />
+        <section id="contact" className="py-32 relative bg-white dark:bg-neutral-950 overflow-hidden">
+            <div className="absolute inset-0">
+                <div className="absolute top-0 left-10 -translate-x-1/2 w-50 h-150 bg-sky-600/10 rounded-full blur-3xl" />
+                <div className="absolute bottom-0 right-10 w-50 h-100 bg-violet-600/10 rounded-full blur-3xl" />
             </div>
 
             <div className="relative z-10 max-w-4xl mx-auto px-6">
