@@ -1,9 +1,9 @@
-import Hero from '../sections/Hero';
-import About from '../sections/About';
-import Stack from '../sections/Stack';
-import Projects from '../sections/Projects';
-import Timeline from '../sections/Timeline';
-import Contact from '../sections/Contact';
+import Hero from '../modules/Home/sections/Hero';
+import About from '../modules/Home/sections/About';
+import Stack from '../modules/Home/sections/Stack';
+import Projects from '../modules/Home/sections/Projects';
+import Timeline from '../modules/Home/sections/Timeline';
+import Contact from '../modules/Home/sections/Contact';
 import Navbar from '../shared/components/layout/Navbar';
 import Footer from '../shared/components/layout/Footer';
 import { CursorGlow, CursorTrail } from '../shared/components/effects/CursorParticles';

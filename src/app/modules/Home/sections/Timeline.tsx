@@ -1,8 +1,8 @@
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { Briefcase } from 'lucide-react';
-import { experience } from '../shared/data/experience';
-import { fadeInUp, staggerContainer, slideInLeft, slideInRight } from '../../lib/animations';
+import { experience } from '../../../shared/data/experience';
+import { fadeInUp, staggerContainer, slideInLeft, slideInRight } from '../../../../lib/animations';
 
 export default function Timeline() {
     const { t } = useTranslation();
