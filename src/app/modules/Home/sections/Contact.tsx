@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { motion, AnimatePresence } from 'framer-motion';
-import { fadeInUp, staggerContainer } from '../../../../lib/animations';
 import { Mail, Copy, Check, ArrowUpRight, Sparkles } from 'lucide-react';
+import { fadeInUp, staggerContainer } from '@/lib/animations';
 
 export default function Contact() {
     const { t } = useTranslation();
@@ -19,8 +19,8 @@ export default function Contact() {
     return (
         <section id="contact" className="py-32 relative bg-neutral-50 dark:bg-neutral-950 overflow-hidden">
             <div className="absolute inset-0 hidden dark:block">
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-sky-600/10 rounded-full blur-3xl" />
-                <div className="absolute bottom-0 left-1/4 w-[400px] h-[400px] bg-violet-600/10 rounded-full blur-3xl" />
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-150 h-150 bg-sky-600/10 rounded-full blur-3xl" />
+                <div className="absolute bottom-0 left-1/4 w-100 h-100 bg-violet-600/10 rounded-full blur-3xl" />
             </div>
 
             <div className="relative z-10 max-w-4xl mx-auto px-6">
@@ -45,7 +45,7 @@ export default function Contact() {
                             className="group relative px-8 py-5 rounded-full font-semibold text-xl bg-neutral-100 dark:bg-neutral-900 border border-neutral-200 dark:border-white/10 overflow-hidden"
                         >
                             <motion.div
-                                className="absolute inset-0 bg-gradient-to-r from-sky-600 to-violet-600 opacity-0 group-hover:opacity-100 transition-opacity"
+                                className="absolute inset-0 bg-linear-to-r from-sky-600 to-violet-600 opacity-0 group-hover:opacity-100 transition-opacity"
                                 initial={{ opacity: 0 }}
                                 animate={{ opacity: isHovering ? 1 : 0 }}
                             />
@@ -53,7 +53,7 @@ export default function Contact() {
                             <div className="relative z-10 flex items-center gap-3">
                                 <Mail className="w-5 h-5 text-neutral-600 dark:text-neutral-400 group-hover:text-white transition-colors" />
                                 <span className="text-neutral-800 dark:text-neutral-200 group-hover:text-white transition-colors">{email}</span>
-                                <ArrowUpRight className="w-5 h-5 text-neutral-500 dark:text-neutral-500 group-hover:text-white transition-colors opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all" />
+                                <ArrowUpRight className="w-5 h-5 text-neutral-500 dark:text-neutral-500 group-hover:text-white transition-colors opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0" />
                             </div>
                         </motion.a>
 
