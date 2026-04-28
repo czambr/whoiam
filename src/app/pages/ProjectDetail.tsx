@@ -2,10 +2,10 @@ import { useParams, Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { ArrowLeft, ExternalLink } from 'lucide-react';
-import { projects } from '../data/projects';
-import Navbar from '../components/layout/Navbar';
-import Footer from '../components/layout/Footer';
-import { fadeInUp } from '../lib/animations';
+import { projects } from '../shared/data/projects';
+import Navbar from '../shared/components/layout/Navbar';
+import Footer from '../shared/components/layout/Footer';
+import { fadeInUp } from '../../lib/animations';
 
 export default function ProjectDetail() {
     const { slug } = useParams();

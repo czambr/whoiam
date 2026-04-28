@@ -1,8 +1,8 @@
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { Briefcase } from 'lucide-react';
-import { experience } from '../data/experience';
-import { fadeInUp, staggerContainer, slideInLeft, slideInRight } from '../lib/animations';
+import { fadeInUp, staggerContainer, slideInLeft, slideInRight } from '@/lib/animations';
+import { experience } from '@/app/shared/data/experience';
 
 export default function Timeline() {
     const { t } = useTranslation();
@@ -26,8 +26,8 @@ export default function Timeline() {
                     </motion.div>
 
                     <div className="relative">
-                        <div className="absolute left-4 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-sky-500/30 to-transparent md:hidden" />
-                        <div className="absolute left-1/2 top-0 bottom-0 hidden w-px -translate-x-1/2 bg-gradient-to-b from-transparent via-sky-500/30 to-transparent md:block" />
+                        <div className="absolute left-4 top-0 bottom-0 w-px bg-linear-to-b from-transparent via-sky-500/30 to-transparent md:hidden" />
+                        <div className="absolute left-1/2 top-0 bottom-0 hidden w-px -translate-x-1/2 bg-linear-to-b from-transparent via-sky-500/30 to-transparent md:block" />
 
                         {experience.map((exp, index) => (
                             <motion.div

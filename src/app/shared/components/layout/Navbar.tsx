@@ -4,9 +4,9 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Sun, Moon, Menu, X } from 'lucide-react';
 
-import { useAppStore } from '@/store/useAppStore';
+import { useAppStore } from '@/app/shared/store/useAppStore';
 import { cn } from '@/lib/utils';
-import { useTheme } from '@/hooks/useTheme';
+import { useTheme } from '@/app/shared/hooks/useTheme';
 
 const navLinks = [
     { key: 'about', href: '#about' },

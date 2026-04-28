@@ -1,74 +1,22 @@
-import { useState, useRef, useEffect } from 'react';
+import { useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { motion, AnimatePresence } from 'framer-motion';
-import { stack } from '../data/stack';
-import type { IconType } from '@/types';
-import { Sparkles, Code2, Server, Wrench } from 'lucide-react';
+import { stack } from '@/app/shared/data/stack';
 
-const categories = [
-    { key: 'frontend', label: 'Frontend', icon: Code2 },
-    { key: 'backend', label: 'Backend', icon: Server },
-    { key: 'devops', label: 'DevOps', icon: Sparkles },
-    { key: 'tools', label: 'Tools', icon: Wrench },
-];
+import { TechIcon } from '../components/TechIcon';
+import { CATEGORIES_STACK } from '../constants';
 
-function TechIcon({ item }: { item: typeof stack[0] }) {
-    const Icon = item.Icon;
-    const [isHovered, setIsHovered] = useState(false);
 
-    return (
-        <motion.div
-            onMouseEnter={() => setIsHovered(true)}
-            onMouseLeave={() => setIsHovered(false)}
-            className="relative p-6 rounded-2xl cursor-pointer bg-white dark:bg-neutral-900/50 border border-neutral-200 dark:border-white/5 backdrop-blur-sm overflow-hidden"
-            animate={{ scale: isHovered ? 1.05 : 1 }}
-            transition={{ type: 'spring', damping: 20, stiffness: 200 }}
-        >
-            <div className="absolute inset-0 bg-gradient-to-br from-sky-500/5 via-transparent to-violet-500/5 opacity-0 hover:opacity-100 transition-opacity duration-300" />
-
-            <div className="absolute top-0 right-0 w-20 h-20 bg-sky-500/10 rounded-full blur-2xl" />
-
-            <div className="relative z-10 flex flex-col items-center gap-4">
-                <motion.div
-                    className={`flex h-14 w-14 items-center justify-center rounded-xl ${item.bgClass}`}
-                    animate={{ scale: isHovered ? 1.1 : 1 }}
-                    transition={{ duration: 0.2 }}
-                >
-                    <Icon className={`h-7 w-7 ${item.colorClass}`} />
-                </motion.div>
-
-                <div className="text-center">
-                    <span className="block font-semibold text-neutral-900 dark:text-neutral-200">
-                        {item.name}
-                    </span>
-                    {item.category === 'frontend' && (
-                        <span className="text-xs text-neutral-500 dark:text-neutral-500 mt-1 block">UI Library</span>
-                    )}
-                </div>
-            </div>
-
-            <motion.div
-                className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-sky-500 to-violet-500"
-                initial={{ scaleX: 0 }}
-                animate={{ scaleX: isHovered ? 1 : 0 }}
-                transition={{ duration: 0.3 }}
-            />
-        </motion.div>
-    );
-}
 
 export default function Stack() {
     const { t } = useTranslation();
     const [activeCategory, setActiveCategory] = useState('frontend');
-    const [isAnimating, setIsAnimating] = useState(false);
 
-    const filteredStack = stack.filter((item) => item.category === activeCategory);
+    const filteredStack = useMemo(() => stack.filter((item) => item.category === activeCategory), [activeCategory]);
 
     const handleCategoryChange = (key: string) => {
         if (key !== activeCategory) {
-            setIsAnimating(true);
             setActiveCategory(key);
-            setTimeout(() => setIsAnimating(false), 400);
         }
     };
 
@@ -98,7 +46,7 @@ export default function Stack() {
                 </motion.div>
 
                 <motion.div className="flex flex-wrap gap-3 mb-12 justify-center">
-                    {categories.map((cat) => {
+                    {CATEGORIES_STACK.map((cat) => {
                         const Icon = cat.icon;
                         return (
                             <motion.button
