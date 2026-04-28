@@ -6,10 +6,13 @@ import Timeline from '../sections/Timeline';
 import Contact from '../sections/Contact';
 import Navbar from '../components/layout/Navbar';
 import Footer from '../components/layout/Footer';
+import { CursorGlow, CursorTrail } from '../components/effects/CursorParticles';
 
 export default function Home() {
     return (
-        <div className="min-h-screen">
+        <div className="min-h-screen bg-white dark:bg-neutral-950 transition-colors">
+            <CursorGlow />
+            <CursorTrail />
             <Navbar />
             <main>
                 <Hero />
