@@ -34,6 +34,11 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+:root {
+  --cursor-x: -9999px;
+  --cursor-y: -9999px;
+}
+
 .dark body {
   background-color: var(--color-bg-dark);
   color: var(--color-text-dark);
@@ -120,4 +125,51 @@ body {
 
 .float-animation {
   animation: float 4s ease-in-out infinite;
+}
+
+.cursor-glow,
+.cursor-trail {
+  position: fixed;
+  left: 0;
+  top: 0;
+  pointer-events: none;
+  transform: translate3d(var(--cursor-x), var(--cursor-y), 0) translate(-50%, -50%);
+  will-change: transform;
+}
+
+.cursor-glow {
+  width: 320px;
+  height: 320px;
+  z-index: 50;
+  opacity: 0.9;
+  mix-blend-mode: screen;
+  background: radial-gradient(circle, rgba(14, 165, 233, 0.18) 0%, rgba(124, 58, 237, 0.12) 45%, transparent 70%);
+  transition: transform 90ms linear, opacity 200ms ease;
+}
+
+.cursor-trail {
+  width: 120px;
+  height: 120px;
+  z-index: 40;
+  opacity: 0.6;
+  mix-blend-mode: screen;
+  filter: blur(6px);
+  background: radial-gradient(circle, rgba(14, 165, 233, 0.35) 0%, rgba(124, 58, 237, 0.15) 55%, transparent 75%);
+  transition: transform 240ms ease;
+}
+
+@media (pointer: coarse) {
+
+  .cursor-glow,
+  .cursor-trail {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  .cursor-glow,
+  .cursor-trail {
+    transition: none;
+  }
 }

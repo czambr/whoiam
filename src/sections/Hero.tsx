@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
-import { motion, AnimatePresence, useMotionValue, useTransform, useSpring } from 'framer-motion';
+import { motion, AnimatePresence, } from 'framer-motion';
 import { ArrowRight, CircleDot, Sparkles } from 'lucide-react';
 
 const roles = ['role', 'roleAlt', 'roleAlt2'];
@@ -87,16 +87,6 @@ function HeroBackground() {
             <FloatingShape delay={0} className="w-72 h-72 bg-sky-500 top-1/4 -left-24 blur-3xl hidden dark:block" />
             <FloatingShape delay={1} className="w-96 h-96 bg-violet-600 bottom-0 -right-24 blur-3xl hidden dark:block" />
             <FloatingShape delay={2} className="w-48 h-48 bg-cyan-500 top-1/2 left-1/3 blur-2xl hidden dark:block" />
-
-            <motion.div
-                className="absolute inset-0 hidden dark:block"
-                style={{
-                    backgroundImage: `radial-gradient(circle at 1px 1px, rgba(255,255,255,0.03) 1px, transparent 0)`,
-                    backgroundSize: '40px 40px',
-                }}
-                animate={{ backgroundPosition: ['0px 0px', '40px 40px'] }}
-                transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
-            />
         </div>
     );
 }
