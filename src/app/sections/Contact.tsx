@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { motion, AnimatePresence } from 'framer-motion';
-import { fadeInUp, staggerContainer } from '../lib/animations';
+import { fadeInUp, staggerContainer } from '../../lib/animations';
 import { Mail, Copy, Check, ArrowUpRight, Sparkles } from 'lucide-react';
 
 export default function Contact() {

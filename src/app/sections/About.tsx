@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { animate, motion, useInView, useReducedMotion } from 'framer-motion';
 import { MapPin, Sparkles, Code, Users } from 'lucide-react';
-import { fadeInUp, staggerContainer } from '../lib/animations';
+import { fadeInUp, staggerContainer } from '../../lib/animations';
 
 const AnimatedNumber = ({ value, suffix, className }: { value: number; suffix?: string; className?: string }) => {
     const ref = useRef<HTMLSpanElement | null>(null);

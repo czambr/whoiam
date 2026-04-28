@@ -4,9 +4,9 @@ import Stack from '../sections/Stack';
 import Projects from '../sections/Projects';
 import Timeline from '../sections/Timeline';
 import Contact from '../sections/Contact';
-import Navbar from '../components/layout/Navbar';
-import Footer from '../components/layout/Footer';
-import { CursorGlow, CursorTrail } from '../components/effects/CursorParticles';
+import Navbar from '../shared/components/layout/Navbar';
+import Footer from '../shared/components/layout/Footer';
+import { CursorGlow, CursorTrail } from '../shared/components/effects/CursorParticles';
 
 export default function Home() {
     return (

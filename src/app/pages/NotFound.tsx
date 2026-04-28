@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { ArrowLeft } from 'lucide-react';
-import Navbar from '../components/layout/Navbar';
-import Footer from '../components/layout/Footer';
+import Navbar from '../shared/components/layout/Navbar';
+import Footer from '../shared/components/layout/Footer';
 
 export default function NotFound() {
     const { t } = useTranslation();

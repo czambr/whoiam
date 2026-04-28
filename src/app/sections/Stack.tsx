@@ -1,8 +1,8 @@
 import { useState, useRef, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { motion, AnimatePresence } from 'framer-motion';
-import { stack } from '../data/stack';
-import type { IconType } from '@/types';
+import { stack } from '../shared/data/stack';
+import type { IconType } from '@/app/shared/types';
 import { Sparkles, Code2, Server, Wrench } from 'lucide-react';
 
 const categories = [

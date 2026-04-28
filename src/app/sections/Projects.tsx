@@ -3,8 +3,8 @@ import { useTranslation } from 'react-i18next';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ExternalLink, ChevronLeft, ChevronRight, Layers, Maximize2 } from 'lucide-react';
-import { projects } from '../data/projects';
-import { useAppStore } from '@/store/useAppStore';
+import { projects } from '../shared/data/projects';
+import { useAppStore } from '@/app/shared/store/useAppStore';
 
 const categories = [
     { key: 'all', label: 'Todos' },
