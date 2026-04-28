@@ -1,4 +1,5 @@
 import { Code2, Server, Sparkles, Wrench } from "lucide-react";
+import { FaGithub, FaLinkedinIn } from "react-icons/fa";
 
 export const CATEGORIES_PROJECTS = [
     { key: 'all', label: 'Todos' },
@@ -13,4 +14,9 @@ export const CATEGORIES_STACK = [
     { key: 'backend', label: 'Backend', icon: Server },
     { key: 'devops', label: 'DevOps', icon: Sparkles },
     { key: 'tools', label: 'Tools', icon: Wrench },
+];
+
+export const CATEGORIES_SOCIAL = [
+    { key: 'github', label: 'GitHub', icon: FaGithub },
+    { key: 'linkedin', label: 'LinkedIn', icon: FaLinkedinIn },
 ];

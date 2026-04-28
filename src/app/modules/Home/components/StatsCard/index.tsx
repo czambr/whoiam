@@ -8,7 +8,7 @@ export const StatCard = ({ value, suffix, label, icon: Icon, delay }: { value: n
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay, duration: 0.5 }}
-            className="relative p-6 rounded-2xl bg-neutral-50 dark:bg-neutral-900/50 border border-neutral-200 dark:border-white/5 backdrop-blur-sm overflow-hidden group"
+            className="relative p-6 rounded-2xl bg-neutral-50 dark:bg-neutral-900/50 border border-neutral-200 dark:border-white/5 backdrop-blur-sm overflow-hidden group mx-10 sm:mx-0"
         >
             <div className="absolute inset-0 bg-linear-to-br from-sky-500/5 via-transparent to-violet-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 hidden dark:block" />
 

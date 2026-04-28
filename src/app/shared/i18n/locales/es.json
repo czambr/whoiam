@@ -20,7 +20,13 @@
         "title": "Sobre mí",
         "body": "Me apasiona crear experiencias digitales memorables. Con más de {{ years }} años de experiencia en desarrollo web, combino habilidades técnicas con un sentido estético refinado para construir productos que no solo funcionan, sino que cautivan.",
         "location": "Locación reservada",
-        "availability": "Disponible para proyectos"
+        "availability": "Disponible para proyectos",
+        "stats": {
+            "years": "Años de experiencia",
+            "industries": "Industrias",
+            "clients": "Clientes internacionales",
+            "stack": "Stack tecnológico"
+        }
     },
     "stack": {
         "title": "Mi stack",

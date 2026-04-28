@@ -1,14 +1,17 @@
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Mail, Copy, Check, ArrowUpRight, Sparkles } from 'lucide-react';
+import { Mail, Copy, Check, ArrowUpRight } from 'lucide-react';
+
 import { fadeInUp, staggerContainer } from '@/lib/animations';
+import { userData } from '@/app/shared/data/userdata';
+import { CATEGORIES_SOCIAL } from '../constants';
 
 export default function Contact() {
     const { t } = useTranslation();
     const [copied, setCopied] = useState(false);
     const [isHovering, setIsHovering] = useState(false);
-    const email = 'hello@developer.com';
+    const email = userData.email;
 
     const handleCopy = async () => {
         await navigator.clipboard.writeText(email);
@@ -52,7 +55,7 @@ export default function Contact() {
 
                             <div className="relative z-10 flex items-center gap-3">
                                 <Mail className="w-5 h-5 text-neutral-600 dark:text-neutral-400 group-hover:text-white transition-colors" />
-                                <span className="text-neutral-800 dark:text-neutral-200 group-hover:text-white transition-colors">{email}</span>
+                                <span className="text-neutral-800 dark:text-neutral-200 group-hover:text-white transition-colors">{t('contact.email')}</span>
                                 <ArrowUpRight className="w-5 h-5 text-neutral-500 dark:text-neutral-500 group-hover:text-white transition-colors opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0" />
                             </div>
                         </motion.a>
@@ -81,21 +84,17 @@ export default function Contact() {
                     </motion.div>
 
                     <motion.div variants={fadeInUp} className="mt-16 flex flex-wrap gap-4 justify-center">
-                        {[
-                            { label: 'GitHub', href: 'https://github.com' },
-                            { label: 'LinkedIn', href: 'https://linkedin.com' },
-                            { label: 'Twitter', href: 'https://twitter.com' },
-                        ].map((social) => (
+                        {CATEGORIES_SOCIAL.map((social) => (
                             <motion.a
                                 key={social.label}
-                                href={social.href}
+                                href={social.key === 'github' ? userData.github : 'www.google.com'}
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-medium bg-white dark:bg-white/5 border border-neutral-200 dark:border-white/5 text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-200 hover:border-neutral-300 dark:hover:border-white/20 transition-colors"
                                 whileHover={{ scale: 1.05, y: -2 }}
                                 whileTap={{ scale: 0.98 }}
                             >
-                                <Sparkles className="w-4 h-4" />
+                                <social.icon className="w-4 h-4" />
                                 {social.label}
                             </motion.a>
                         ))}

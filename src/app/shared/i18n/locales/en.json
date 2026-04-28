@@ -20,7 +20,13 @@
         "title": "About me",
         "body": "I'm passionate about creating memorable digital experiences. With over {{ years }} of experience in web development, I combine technical skills with a refined aesthetic sense to build products that not only work, but captivate.",
         "location": "Location reserved",
-        "availability": "Available for projects"
+        "availability": "Available for projects",
+        "stats": {
+            "years": "Years of experience",
+            "industries": "Industries",
+            "clients": "International clients",
+            "stack": "Tech stack"
+        }
     },
     "stack": {
         "title": "My stack",

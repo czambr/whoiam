@@ -1,10 +1,13 @@
+import { useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
-import { MapPin, Sparkles, Code, Users } from 'lucide-react';
+import { MapPin } from 'lucide-react';
 
 import { fadeInUp, staggerContainer } from '@/lib/animations';
+import { userData } from '@/app/shared/data/userdata';
+
 import { StatCard } from '../components/StatsCard';
-import { useMemo } from 'react';
+import { mapperStatsLabels } from '../utils';
 
 
 
@@ -14,16 +17,12 @@ export default function About() {
 
 
     const yearsOfExperience = useMemo(() => {
-        const startYear = 2022;
+        const startYear = userData.initialOfExperience;
         const currentYear = new Date().getFullYear();
         return currentYear - startYear;
     }, []);
 
-        const stats = [
-        { value: yearsOfExperience, suffix: '+', label: 'Años', icon: Sparkles },
-        { value: 20, suffix: '+', label: 'Proyectos', icon: Code },
-        { value: 10, suffix: '+', label: 'Clientes', icon: Users },
-    ];
+    const stats = useMemo(() => mapperStatsLabels({ t, yearsOfExperience }), [t, yearsOfExperience]);
 
     return (
         <section id="about" className="py-32 relative bg-white dark:bg-neutral-950 overflow-hidden">
@@ -55,7 +54,7 @@ export default function About() {
                             </motion.div>
                         </motion.div>
 
-                        <motion.div variants={fadeInUp} className="grid grid-cols-3 gap-4">
+                        <motion.div variants={fadeInUp} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                             {stats.map((stat, i) => (
                                 <StatCard key={i} value={stat.value} suffix={stat.suffix} label={stat.label} icon={stat.icon} delay={i * 0.1} />
                             ))}
