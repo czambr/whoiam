@@ -1,16 +1,70 @@
+import { useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
-import { motion } from 'framer-motion';
+import { animate, motion, useInView, useReducedMotion } from 'framer-motion';
 import { CircleDollarSign, Code, Users, MapPin } from 'lucide-react';
 import { fadeInUp, staggerContainer } from '../lib/animations';
-import { Card, CardContent } from '../shadcn/card';
+
+const AnimatedNumber = ({
+    value,
+    suffix,
+    className,
+}: {
+    value: number;
+    suffix?: string;
+    className?: string;
+}) => {
+    const ref = useRef<HTMLSpanElement | null>(null);
+    const isInView = useInView(ref, { once: true, amount: 0.6 });
+    const shouldReduceMotion = useReducedMotion();
+
+    useEffect(() => {
+        if (!isInView) {
+            return;
+        }
+
+        if (!ref.current) {
+            return;
+        }
+
+        if (shouldReduceMotion) {
+            ref.current.textContent = `${value}${suffix ?? ''}`;
+            return;
+        }
+
+        const controls = animate(0, value, {
+            type: 'spring',
+            stiffness: 120,
+            damping: 18,
+            mass: 0.8,
+            onUpdate: latest => {
+                if (ref.current) {
+                    ref.current.textContent = `${Math.round(latest)}${suffix ?? ''}`;
+                }
+            },
+        });
+
+        return () => controls.stop();
+    }, [isInView, shouldReduceMotion, suffix, value]);
+
+    return (
+        <span ref={ref} className={className}>
+            {shouldReduceMotion ? `${value}${suffix ?? ''}` : `0${suffix ?? ''}`}
+        </span>
+    );
+};
 
 export default function About() {
     const { t } = useTranslation();
 
     const stats = [
-        { value: '5+', label: t('experience.present').replace('Actual', 'Years'), icon: CircleDollarSign },
-        { value: '20+', label: 'Projects', icon: Code },
-        { value: '10+', label: 'Clients', icon: Users },
+        {
+            value: 5,
+            suffix: '+',
+            label: t('experience.present').replace('Actual', 'Years'),
+            icon: CircleDollarSign,
+        },
+        { value: 20, suffix: '+', label: 'Projects', icon: Code },
+        { value: 10, suffix: '+', label: 'Clients', icon: Users },
     ];
 
     return (
@@ -46,7 +100,11 @@ export default function About() {
                             {stats.map((stat, i) => (
                                 <div key={i} className="text-center p-6 rounded-2xl bg-neutral-50 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800">
                                     <stat.icon className="w-8 h-8 mx-auto mb-3 text-sky-600 dark:text-sky-400" />
-                                    <div className="text-3xl font-bold text-neutral-900 dark:text-neutral-50">{stat.value}</div>
+                                    <AnimatedNumber
+                                        value={stat.value}
+                                        suffix={stat.suffix}
+                                        className="text-3xl font-bold text-neutral-900 dark:text-neutral-50"
+                                    />
                                     <div className="text-sm mt-1 text-neutral-500 dark:text-neutral-500">{stat.label}</div>
                                 </div>
                             ))}

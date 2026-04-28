@@ -23,9 +23,11 @@ export default function Navbar() {
     const [activeSection, setActiveSection] = useState('about');
 
     useEffect(() => {
-        const handleScroll = () => {
+        let ticking = false;
+
+        const updateScrollState = () => {
             setScrolled(window.scrollY > 50);
-            
+
             const scrollPos = window.scrollY + 200;
             for (const link of navLinks) {
                 const id = link.href.slice(1);
@@ -34,9 +36,18 @@ export default function Navbar() {
                     setActiveSection(id);
                 }
             }
+
+            ticking = false;
         };
 
-        handleScroll();
+        const handleScroll = () => {
+            if (!ticking) {
+                window.requestAnimationFrame(updateScrollState);
+                ticking = true;
+            }
+        };
+
+        updateScrollState();
         window.addEventListener('scroll', handleScroll, { passive: true });
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);

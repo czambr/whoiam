@@ -26,17 +26,21 @@ export default function Timeline() {
                     </motion.div>
 
                     <div className="relative">
-                        <div className="absolute left-1/2 top-0 bottom-0 w-px -translate-x-1/2 hidden md:block bg-linear-to-b from-transparent via-sky-500 to-transparent" />
+                        <div className="absolute left-4 top-0 bottom-0 w-px bg-linear-to-b from-transparent via-sky-500 to-transparent md:hidden" />
+                        <div className="absolute left-1/2 top-0 bottom-0 hidden w-px -translate-x-1/2 bg-linear-to-b from-transparent via-sky-500 to-transparent md:block" />
 
                         {experience.map((exp, index) => (
                             <motion.div
                                 key={exp.id}
                                 variants={index % 2 === 0 ? slideInLeft : slideInRight}
                                 viewport={{ once: true }}
-                                className={`relative flex items-center md:justify-between mb-12 ${
+                                className={`relative mb-12 flex items-center pl-10 md:justify-between md:pl-0 ${
                                     index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
                                 }`}
                             >
+                                <div className="absolute left-1.5 top-6 flex h-5 w-5 items-center justify-center rounded-full bg-sky-600/15 md:hidden">
+                                    <div className="h-2.5 w-2.5 rounded-full bg-sky-600 dark:bg-sky-400" />
+                                </div>
                                 <div className="w-full md:w-5/12">
                                     <div className="p-6 rounded-xl bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800">
                                         <div className="flex items-center gap-3 mb-3">
