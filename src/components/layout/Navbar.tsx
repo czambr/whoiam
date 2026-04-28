@@ -6,6 +6,7 @@ import { Sun, Moon, Menu, X } from 'lucide-react';
 
 import { useAppStore } from '@/store/useAppStore';
 import { cn } from '@/lib/utils';
+import { useTheme } from '@/hooks/useTheme';
 
 const navLinks = [
     { key: 'about', href: '#about' },
@@ -17,7 +18,9 @@ const navLinks = [
 
 export default function Navbar() {
     const { t, i18n } = useTranslation();
-    const { theme, toggleTheme, lang, setLang } = useAppStore();
+    const { lang, setLang } = useAppStore();
+    const {theme, toggleTheme} = useTheme();
+
     const [scrolled, setScrolled] = useState(false);
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const [activeSection, setActiveSection] = useState('about');

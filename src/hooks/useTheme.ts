@@ -1,19 +1,12 @@
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import { useAppStore } from '../store/useAppStore';
 
 export function useTheme() {
     const { theme, toggleTheme } = useAppStore();
-    const [mounted, setMounted] = useState(false);
 
     useEffect(() => {
-        setMounted(true);
-    }, []);
+        document.documentElement.classList.toggle('dark', theme === 'dark');
+    }, [theme]);
 
-    useEffect(() => {
-        if (mounted) {
-            document.documentElement.classList.toggle('dark', theme === 'dark');
-        }
-    }, [theme, mounted]);
-
-    return { theme, toggleTheme, mounted };
+    return { theme, toggleTheme };
 }
