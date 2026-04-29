@@ -59,7 +59,7 @@ export default function Projects() {
     };
 
     return (
-        <section id="projects" className={`py-32 relative overflow-hidden ${isDark ? 'bg-neutral-950' : 'bg-neutral-50'}`}>
+        <section id="projects" className={'py-32 relative overflow-hidden dark:bg-neutral-950 bg-white'}>
             <div className="absolute inset-0">
                 <div className="absolute top-1/4 left-0 w-96 h-96 bg-sky-600/10 rounded-full blur-3xl" />
                 <div className="absolute bottom-1/4 right-0 w-96 h-96 bg-violet-600/10 rounded-full blur-3xl" />
