@@ -4,14 +4,19 @@ import Home from '../pages/Home';
 import ProjectDetail from '../pages/ProjectDetail';
 import NotFound from '../pages/NotFound';
 
-export const router = createBrowserRouter([
+export const router = createBrowserRouter(
+    [
+        {
+            path: '/',
+            element: <App />,
+            children: [
+                { index: true, element: <Home /> },
+                { path: 'projects/:slug', element: <ProjectDetail /> },
+                { path: '*', element: <NotFound /> },
+            ],
+        },
+    ],
     {
-        path: '/',
-        element: <App />,
-        children: [
-            { index: true, element: <Home /> },
-            { path: 'projects/:slug', element: <ProjectDetail /> },
-            { path: '*', element: <NotFound /> },
-        ],
-    },
-]);
+        basename: import.meta.env.BASE_URL,
+    }
+);

@@ -18,7 +18,7 @@
     },
     "about": {
         "title": "About me",
-        "body": "I'm passionate about creating memorable digital experiences. With over {{ years }} of experience in web development, I combine technical skills with a refined aesthetic sense to build products that not only work, but captivate.",
+        "body": "I'm passionate about creating memorable digital experiences. With over {{ years }} years of experience in web development, I combine technical skills with a refined aesthetic sense to build products that not only work, but captivate.",
         "location": "Location reserved",
         "availability": "Available for projects",
         "stats": {
