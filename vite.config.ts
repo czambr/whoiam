@@ -17,5 +17,5 @@ export default defineConfig({
       '@app': path.resolve(__dirname, './src/app'),
     },
   },
-  base: '/whoiam/'
+  base: 'https://czambr.github.io/whoiam/'
 })
